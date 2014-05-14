@@ -6,6 +6,7 @@ package stockapp;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import stockapp.stockreader.YQLGetter;
 
 /**
  *
@@ -17,6 +18,7 @@ public class StockApp extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		logic = new Logic(stage);
+		new YQLGetter().test();
 		/*Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
 		FXMLLoader loader = new FXMLLoader();
 		

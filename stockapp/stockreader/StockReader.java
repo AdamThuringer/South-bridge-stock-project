@@ -1,10 +1,26 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package stockapp.stockreader;
 
-public class StockReader {
+import stockapp.Equity;
 
+public class StockReader {
+	
+	public Equity getEquity(String symbol) {
+		YQLQuery query = new YQLQuery();
+		query.setStatement("select");
+		query.setDataTable("yahoo.finance.quotes");
+		query.addRequestedField("*");
+		query.addFieldCondition("symbol", symbol);
+		try {
+			String result = YQLGetter.sendQuery(query);
+			Equity eq = XMLFormatter.format(result);
+			return eq;
+		} catch(Exception ex) {}
+		return null;
+		
+	}
+	
+	private void getSymbols() {
+		
+	}
+	
 }

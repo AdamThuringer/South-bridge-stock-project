@@ -16,6 +16,7 @@
         <Button mnemonicParsing="false" onAction="#handleOptionsButton" text="Options" />
         <Button mnemonicParsing="false" onAction="#requestOMX" text="OMXS30" />
         <Button mnemonicParsing="false" onAction="#requestNASDAQ" text="NASDAQ" />
+        <Button mnemonicParsing="false" onAction="#requestYahoo" text="Yahoo" />
       </children>
       <BorderPane.margin>
         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
