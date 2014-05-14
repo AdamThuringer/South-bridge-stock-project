@@ -26,6 +26,12 @@ public class GraphicsController implements Initializable {
 		logic = l;
 	}
 	
+	public void checkLogic() throws RuntimeException {
+		if(logic == null) {
+			throw new RuntimeException("No logic handler has been specified.");
+		}
+	}
+	
 	public Logic getLogic() {
 		return logic;
 	}

@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import stockapp.GraphicsController;
 import stockapp.Logic;
+import stockapp.Equity;
 
 /**
  * FXML Controller class
@@ -17,29 +18,29 @@ import stockapp.Logic;
  * @author Patryk
  */
 public class NativeGraphController extends GraphicsController {
-
-	/**
-	 * Initializes the controller class.
-	 */
+	private Logic log;
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		// TODO
+		log = getLogic();
 	}
 	
 	@FXML private void handleOptionsButton(ActionEvent event) {
 		
 	}
-	
 		
-	@FXML private void requestOMX(ActionEvent event) throws Exception {
-		if(getLogic() == null) {
-			throw new Exception("No logic handler has been specified.");
-		}
+	@FXML private void requestOMX(ActionEvent event) {
+		checkLogic();
 		Logic logic = getLogic();
 		logic.getStock("name-of-stock"); //The format of the stock identification will be decided later
 	}
 	
 	@FXML private void requestNASDAQ(ActionEvent event) {
 		
+	}
+	
+	@FXML private void requestYahoo(ActionEvent event) {
+		checkLogic();
+		Equity eq = log.getStock("YHOO");
 	}
 }

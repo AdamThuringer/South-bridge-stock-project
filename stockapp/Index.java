@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package stockapp.stockreader;
+package stockapp;
 
 public class Index {
 

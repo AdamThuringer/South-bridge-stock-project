@@ -10,7 +10,6 @@ import java.util.HashMap;
 import javafx.stage.Stage;
 import stockapp.graphics.GUI;
 import stockapp.modules.nativegraph.NativeGraph;
-import stockapp.stockreader.Stock;
 
 public class Logic {
 	private GUI gui;
@@ -43,8 +42,8 @@ public class Logic {
 		return m;
 	}
 	
-	public Stock getStock(String id) {
-		throw new UnsupportedOperationException();
+	public Equity getEquity(String symbol) {
+		return reader.getEquity(symbol);
 	}
 	
 	private void initNativeModules(){
