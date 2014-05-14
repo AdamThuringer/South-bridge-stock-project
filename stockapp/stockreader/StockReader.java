@@ -15,7 +15,7 @@ public class StockReader {
 			Equity eq = XMLFormatter.format(result);
 			return eq;
 		} catch(Exception ex) {}
-		return null
+		return null;
 		
 	}
 	

@@ -32,7 +32,7 @@ public class NativeGraphController extends GraphicsController {
 	@FXML private void requestOMX(ActionEvent event) {
 		checkLogic();
 		Logic logic = getLogic();
-		logic.getStock("name-of-stock"); //The format of the stock identification will be decided later
+		logic.getEquity("name-of-stock"); //The format of the stock identification will be decided later
 	}
 	
 	@FXML private void requestNASDAQ(ActionEvent event) {
@@ -41,6 +41,6 @@ public class NativeGraphController extends GraphicsController {
 	
 	@FXML private void requestYahoo(ActionEvent event) {
 		checkLogic();
-		Equity eq = log.getStock("YHOO");
+		Equity eq = log.getEquity("YHOO");
 	}
 }
