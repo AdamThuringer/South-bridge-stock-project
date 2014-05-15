@@ -18,12 +18,6 @@ import stockapp.Equity;
  * @author Patryk
  */
 public class NativeGraphController extends GraphicsController {
-	private Logic log;
-	
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		log = getLogic();
-	}
 	
 	@FXML private void handleOptionsButton(ActionEvent event) {
 		
@@ -41,6 +35,9 @@ public class NativeGraphController extends GraphicsController {
 	
 	@FXML private void requestYahoo(ActionEvent event) {
 		checkLogic();
-		Equity eq = log.getEquity("YHOO");
+		Equity eq = getLogic().getEquity("YHOO");
+		for(String s : eq.keySet()) {
+			System.out.println("-> " + s);
+		}
 	}
 }
