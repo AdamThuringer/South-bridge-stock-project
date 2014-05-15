@@ -16,7 +16,7 @@ public class Equity {
 		return variables.get(key);
 	}
 	
-	public Set<String> keySet() {
+	public Set<String> variableKeySet() {
 		return variables.keySet();
 	}
 	
@@ -28,36 +28,7 @@ public class Equity {
 		return historical.get(d);
 	}
 	
-	public class EquityDay {
-		private double open, high, low, close;
-		private long volume;
-		
-		public EquityDay(double open, double close, double high, double low, long volume) {
-			this.open = open;
-			this.high = high;
-			this.low = low;
-			this.close = close;
-			this.volume = volume;
-		}
-		
-		public double getOpen() {
-			return open;
-		}
-		
-		public double getClose() {
-			return close;
-		}
-		
-		public double getHigh() {
-			return high;
-		}
-		
-		public double getLow() {
-			return low;
-		}
-		
-		public long getVolume() {
-			return volume;
-		}
+	public Set<Calendar> historicalKeySet() {
+		return historical.keySet();
 	}
 }
