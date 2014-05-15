@@ -38,7 +38,7 @@ public class YQLQuery {
 			String value = entry.getValue();
 			conditions += key + "=\"" + value + "\""; 
 			if(it.hasNext()) {
-				conditions += " and";
+				conditions += " and ";
 			}
 		}
 		String full = "";
