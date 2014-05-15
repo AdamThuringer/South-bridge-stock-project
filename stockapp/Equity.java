@@ -2,6 +2,7 @@ package stockapp;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class Equity {
@@ -30,5 +31,13 @@ public class Equity {
 	
 	public Set<Calendar> historicalKeySet() {
 		return historical.keySet();
+	}
+	
+	public Set<Entry<String, String>> variableEntrySet() {
+		return variables.entrySet();
+	}
+	
+	public Set<Entry<Calendar, EquityDay>> historicalEntrySet() {
+		return historical.entrySet();
 	}
 }
