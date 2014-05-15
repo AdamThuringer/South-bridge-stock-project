@@ -16,8 +16,8 @@
         <Button mnemonicParsing="false" onAction="#handleOptionsButton" text="Options" />
         <Button mnemonicParsing="false" onAction="#requestOMX" text="OMXS30" />
         <Button mnemonicParsing="false" onAction="#requestNASDAQ" text="NASDAQ" />
-        <Button mnemonicParsing="false" onAction="#requestYahoo" text="Yahoo" />
-        <Button mnemonicParsing="false" onAction="#handleLineChart" text="BAJS" />
+        <Button mnemonicParsing="false" text="Yahoo" />
+        <Button mnemonicParsing="false" onAction="#handleLineChart" text="BAJS"/>
       </children>
       <BorderPane.margin>
         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
@@ -25,9 +25,13 @@
     </HBox>
   </bottom>
   <center>
-    <LineChart fx:id="LineChart">
+    <LineChart id="LineChart">
       <xAxis>
-        <NumberAxis side="BOTTOM" />
+        <CategoryAxis side="BOTTOM">
+          <categories>
+            <FXScene fx:factory="observableArrayList" />
+          </categories>
+        </CategoryAxis>
       </xAxis>
       <yAxis>
         <NumberAxis side="LEFT" />

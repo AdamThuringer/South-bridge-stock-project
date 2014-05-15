@@ -4,6 +4,7 @@
  */
 package stockapp.modules.nativegraph;
 
+import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -19,6 +20,7 @@ import stockapp.Logic;
  * @author Patryk
  */
 public class NativeGraphController extends GraphicsController {
+    private Date day;
 
     public NativeGraphController() {
         final NumberAxis xAxis = new NumberAxis();
@@ -35,13 +37,14 @@ public class NativeGraphController extends GraphicsController {
 
     @FXML
     private void handleLineChart(ActionEvent event) {
-
         //defining a series
         XYChart.Series series = new XYChart.Series();
-        series.setName("My portfolio");
+        series.setName("Yahoo");
         //populating the series with data
-        series.getData().add(new XYChart.Data(1, 23));
-        series.getData().add(new XYChart.Data(2, 14));
+        checkLogic();
+        Equity eq = getLogic().getEquity("YHOO");
+//        series.getData().add(new XYChart.Data(1, eq.getHistorical(What???))); 
+        series.getData().add(new XYChart.Data(2, 2));
         series.getData().add(new XYChart.Data(3, 15));
         series.getData().add(new XYChart.Data(4, 24));
         series.getData().add(new XYChart.Data(5, 34));
@@ -49,6 +52,9 @@ public class NativeGraphController extends GraphicsController {
         series.getData().add(new XYChart.Data(7, 22));
         series.getData().add(new XYChart.Data(8, 45));
         series.getData().add(new XYChart.Data(9, 43));
+        series.getData().add(new XYChart.Data(10, 43));
+        series.getData().add(new XYChart.Data(11, 43));
+        series.getData().add(new XYChart.Data(12, 43));
         LineChart.getData().add(series);
     }
 
