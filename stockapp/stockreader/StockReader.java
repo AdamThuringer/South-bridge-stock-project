@@ -1,9 +1,9 @@
 package stockapp.stockreader;
 
+import java.io.IOException;
 import stockapp.Equity;
 
 public class StockReader {
-	
 	public Equity getEquity(String symbol) {
 		YQLQuery query = new YQLQuery();
 		query.setStatement("select");
@@ -14,9 +14,10 @@ public class StockReader {
 			String result = YQLGetter.sendQuery(query);
 			Equity eq = XMLFormatter.format(result);
 			return eq;
-		} catch(Exception ex) {}
-		return null;
-		
+		} catch(IOException ex) {
+			System.out.println("A problem has arisen.");
+		}
+		return null;	
 	}
 	
 	private void getSymbols() {

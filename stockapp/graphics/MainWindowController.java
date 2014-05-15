@@ -30,7 +30,6 @@ public class MainWindowController extends GraphicsController {
 			throw new Exception("No logic handler has been specified.");
 		}
 		getLogic().showModule("com.southbridge.nativegraph");
-		System.out.println("Hello there!");
 	}
 
 }
