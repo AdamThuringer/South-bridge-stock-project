@@ -4,6 +4,7 @@
  */
 package stockapp.modules.nativegraph;
 
+import java.util.Calendar;
 import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,12 +21,14 @@ import stockapp.Logic;
  * @author Patryk
  */
 public class NativeGraphController extends GraphicsController {
+
     private Date day;
 
     public NativeGraphController() {
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
-        this.LineChart = new LineChart<Number,Number>(xAxis,yAxis);
+        this.LineChart = new LineChart<Number, Number>(xAxis, yAxis);
+
     }
 
     @FXML
@@ -33,30 +36,35 @@ public class NativeGraphController extends GraphicsController {
 
     }
     @FXML
-    private final LineChart<Number,Number> LineChart;;
+    private final LineChart<Number, Number> LineChart;
+
+    ;
 
     @FXML
     private void handleLineChart(ActionEvent event) {
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(0);
+        c.set(2014, 03, 15);
         //defining a series
         XYChart.Series series = new XYChart.Series();
         series.setName("Yahoo");
         //populating the series with data
         checkLogic();
         Equity eq = getLogic().getEquity("YHOO");
-//        series.getData().add(new XYChart.Data(1, eq.getHistorical(What???))); 
-        series.getData().add(new XYChart.Data(2, 2));
-        series.getData().add(new XYChart.Data(3, 15));
-        series.getData().add(new XYChart.Data(4, 24));
-        series.getData().add(new XYChart.Data(5, 34));
-        series.getData().add(new XYChart.Data(6, 36));
-        series.getData().add(new XYChart.Data(7, 22));
-        series.getData().add(new XYChart.Data(8, 45));
-        series.getData().add(new XYChart.Data(9, 43));
-        series.getData().add(new XYChart.Data(10, 43));
-        series.getData().add(new XYChart.Data(11, 43));
-        series.getData().add(new XYChart.Data(12, 43));
+        System.out.println(c + " " + eq.getHistorical(c));
+        series.getData().add(new XYChart.Data(1, eq.getHistorical(c)));
+        c.add(Calendar.DATE, 1);
+
         LineChart.getData().add(series);
     }
+//        defining a series
+//        XYChart.Series series = new XYChart.Series();
+//        series.setName("Yahoo");
+//        populating the series with data
+//        checkLogic();
+//        Equity eq = getLogic().getEquity("YHOO");
+//        series.getData().add(new XYChart.Data(1, eq.getHistorical(What???))); 
+//        series.getData().add(new XYChart.Data(2, 2));
 
     @FXML
     private void requestOMX(ActionEvent event) {
