@@ -1,12 +1,12 @@
 package stockapp;
 
-import java.util.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Set;
 
 public class Equity {
 	private HashMap<String, String> variables = new HashMap<>();
-	private HashMap<Date, EquityDay> historical = new HashMap<>();
+	private HashMap<Calendar, EquityDay> historical = new HashMap<>();
 	
 	public void putVariable(String k, String v) {
 		variables.put(k, v);
@@ -20,11 +20,11 @@ public class Equity {
 		return variables.keySet();
 	}
 	
-	public void putHistorical(Date d, EquityDay eq) {
+	public void putHistorical(Calendar d, EquityDay eq) {
 		historical.put(d, eq);
 	}
 	
-	public EquityDay getHistorical(Date d) {
+	public EquityDay getHistorical(Calendar d) {
 		return historical.get(d);
 	}
 	
