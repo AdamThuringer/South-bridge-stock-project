@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package stockapp.stockreader;
 
 import java.io.BufferedReader;
@@ -29,11 +24,7 @@ public class YQLGetter {
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
 		int responseCode = con.getResponseCode();
-		//System.out.println(urlPath + body + postfix);
-		
-		/*System.out.println("\nSending 'GET' request to URL : " + url);
-		System.out.println("Response Code : " + responseCode);*/
- 
+
 		BufferedReader in = new BufferedReader(
 		        new InputStreamReader(con.getInputStream()));
 		String inputLine;
@@ -54,8 +45,5 @@ public class YQLGetter {
 		q.addRequestedField("*");
 		q.addFieldCondition("symbol", "YHOO");
 		q.addFieldCondition("symbol", "GOOG");
-		
-		//System.out.println(sendQuery(q));
-		
 	}
 }

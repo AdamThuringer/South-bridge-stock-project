@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package stockapp.modules.mainwindow;
 
 import javafx.fxml.FXMLLoader;
@@ -24,12 +19,12 @@ public class MainWindow implements Module {
 
 	@Override
 	public String getName() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return "Main Window";
 	}
 
 	@Override
 	public String getAuthor() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return "Southbridge";
 	}
 
 	@Override

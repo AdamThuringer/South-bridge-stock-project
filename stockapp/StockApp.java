@@ -1,31 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package stockapp;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import stockapp.stockreader.YQLGetter;
 
-/**
- *
- * @author Patryk Przybysz
- */
 public class StockApp extends Application {
 	
-	Logic logic;
+	private Logic logic;
 	@Override
 	public void start(Stage stage) throws Exception {
 		logic = new Logic(stage);
 		new YQLGetter().test();
-		/*Parent root = FXMLLoader.load(getClass().getResource("Sample.fxml"));
-		FXMLLoader loader = new FXMLLoader();
-		
-		Scene scene = new Scene(root);
-		
-		stage.setScene(scene);
-		stage.show();*/
 	}
 
 	/**

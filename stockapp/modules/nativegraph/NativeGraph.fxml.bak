@@ -32,7 +32,7 @@
             <CategoryAxis side="BOTTOM" />
           </xAxis>
           <yAxis>
-            <NumberAxis side="LEFT" />
+            <NumberAxis forceZeroInRange="false" side="LEFT" />
           </yAxis>
         </LineChart>
         <HBox>
@@ -68,7 +68,7 @@
             <HBox>
               <children>
                 <TextField fx:id="searchField" />
-                <Button mnemonicParsing="false" text="Go" onAction="#searchStock"/>
+                <Button mnemonicParsing="false" onAction="#searchStock" text="Go" />
               </children>
             </HBox>
           </children>
