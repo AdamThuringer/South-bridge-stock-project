@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author Patryk
  */
-public class GraphicsController implements Initializable {
+public abstract class GraphicsController implements Initializable {
 
 	private Logic logic;
 	
@@ -35,4 +35,6 @@ public class GraphicsController implements Initializable {
 	public Logic getLogic() {
 		return logic;
 	}
+	
+	public abstract void refresh();
 }

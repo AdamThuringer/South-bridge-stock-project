@@ -6,16 +6,12 @@ package stockapp;
 
 import javafx.scene.Parent;
 
-/**
- *
- * @author Patryk
- */
-public interface Module {
-	public Response request(Request r);
-	
+public interface Module {	
 	public String getName();
 	public String getAuthor();
 	public String getPath();
 	
 	public Parent getRoot();
+	
+	public void refresh();
 }

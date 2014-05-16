@@ -9,6 +9,7 @@ import stockapp.stockreader.StockReader;
 import java.util.HashMap;
 import javafx.stage.Stage;
 import stockapp.graphics.GUI;
+import stockapp.modules.mainwindow.MainWindow;
 import stockapp.modules.nativegraph.NativeGraph;
 
 public class Logic {
@@ -22,6 +23,7 @@ public class Logic {
 		initNativeModules();
 		try {
 			gui = new GUI(stage, this);
+			gui.openModule(getModule("com.southbridge.mainwindow").getRoot());
 		} catch(Exception ex) {}
 		reader = new StockReader();
 		
@@ -42,12 +44,13 @@ public class Logic {
 		return m;
 	}
 	
-	public Equity getEquity(String symbol) {
-		return reader.getEquity(symbol);
+	public Equity getEquity(String symbol, String startDate, String endDate) {
+		return reader.getEquity(symbol, startDate, endDate);
 	}
 	
 	private void initNativeModules(){
 		try {
+			loadModule(new MainWindow(this));
 			loadModule(new NativeGraph(this));
 		} catch(Exception ex) {ex.printStackTrace();}
 	}
