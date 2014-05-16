@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="AnchorPane" prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="stockapp.graphics.MainWindowController">
+  <center>
+    <SplitPane dividerPositions="0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" snapToPixel="true">
+          <children>
+            <Label fx:id="label" alignment="CENTER" layoutX="146.0" layoutY="42.0" scaleX="3.0" scaleY="3.0" text="Stock analyzer 3000" textAlignment="CENTER" />
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <children>
+            <SplitMenuButton fx:id="moduleBrowser" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="32.0" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" text="Browse modules">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#module1" text="Graphs" />
+                <MenuItem mnemonicParsing="false" text="..." />
+              </items>
+            </SplitMenuButton>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </center>
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exitButton" text="Exit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

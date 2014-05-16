@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Equity {
 	private HashMap<String, String> variables = new HashMap<>();
-	private HashMap<Calendar, EquityDay> historical = new HashMap<>();
+	private HashMap<String, EquityDay> historical = new HashMap<>();
 	
 	public void putVariable(String k, String v) {
 		variables.put(k, v);
@@ -21,15 +21,15 @@ public class Equity {
 		return variables.keySet();
 	}
 	
-	public void putHistorical(Calendar d, EquityDay eq) {
-		historical.put(d, eq);
+	public void putHistorical(String s, EquityDay eq) {
+		historical.put(s, eq);
 	}
 	
 	public EquityDay getHistorical(Calendar d) {
 		return historical.get(d);
 	}
 	
-	public Set<Calendar> historicalKeySet() {
+	public Set<String> historicalKeySet() {
 		return historical.keySet();
 	}
 	
@@ -37,7 +37,7 @@ public class Equity {
 		return variables.entrySet();
 	}
 	
-	public Set<Entry<Calendar, EquityDay>> historicalEntrySet() {
+	public Set<Entry<String, EquityDay>> historicalEntrySet() {
 		return historical.entrySet();
 	}
 }

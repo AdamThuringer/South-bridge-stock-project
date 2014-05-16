@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package stockapp.modules.nativegraph;
+package stockapp.modules.mainwindow;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,12 +11,12 @@ import stockapp.GraphicsController;
 import stockapp.Logic;
 import stockapp.Module;
 
-public class NativeGraph implements Module{
+public class MainWindow implements Module {
 	private Parent root;
 	private GraphicsController controller;
 	
-	public NativeGraph(Logic logic) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("NativeGraph.fxml"));
+	public MainWindow(Logic logic) throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
 		root = (Parent) loader.load();
 		controller = (GraphicsController) loader.getController();
 		controller.setLogicHandler(logic);
@@ -34,7 +34,7 @@ public class NativeGraph implements Module{
 
 	@Override
 	public String getPath() {
-		return "com.southbridge.nativegraph";
+		return "com.southbridge.mainwindow";
 	}
 
 	@Override
