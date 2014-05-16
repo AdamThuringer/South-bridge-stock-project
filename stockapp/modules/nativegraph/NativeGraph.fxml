@@ -37,17 +37,17 @@
         </LineChart>
         <HBox>
           <children>
-            <Label text="Label" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Label />
+            <Button mnemonicParsing="false" text="Button" visible="false" />
+            <Button mnemonicParsing="false" text="Button" visible="false" />
+            <Button mnemonicParsing="false" text="Button" visible="false" />
           </children>
         </HBox>
         <Separator />
         <HBox>
           <children>
-            <Label text="Label" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Label />
+            <Button mnemonicParsing="false" text="Button" visible="false" />
           </children>
         </HBox>
       </children>

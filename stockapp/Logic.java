@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package stockapp;
 
 import stockapp.stockreader.StockReader;
@@ -24,7 +19,9 @@ public class Logic {
 		try {
 			gui = new GUI(stage, this);
 			gui.openModule(getModule("com.southbridge.mainwindow").getRoot());
-		} catch(Exception ex) {}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
 		reader = new StockReader();
 		
 	}

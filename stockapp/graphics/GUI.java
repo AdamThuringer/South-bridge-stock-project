@@ -1,12 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package stockapp.graphics;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -25,7 +19,6 @@ public class GUI {
 	public void openModule(Parent root) {
 		base.getChildren().clear();
 		base.getChildren().add(root);
-		//stage.setScene(new Scene(root));
 	}
 	
 	private void initBackground() throws Exception{

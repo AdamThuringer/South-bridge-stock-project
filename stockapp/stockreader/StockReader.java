@@ -41,9 +41,4 @@ public class StockReader {
 			System.out.println("2. A problem has arisen.");
 		}
 	}
-	
-	private void getSymbols() {
-		
-	}
-	
 }
