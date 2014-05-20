@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="stockapp.modules.bidask.BidAskController">
+  <children>
+    <VBox layoutX="300.0" layoutY="200.0" prefHeight="200.0" prefWidth="100.0" />
+    <SplitPane dividerPositions="0.39949748743718594" focusTraversable="true" layoutY="-1.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <children>
+            <TextField fx:id="searchBar" layoutX="170.0" layoutY="66.0" prefWidth="200.0" text="YHOO" />
+            <Button fx:id="goButton" layoutX="388.0" layoutY="67.0" mnemonicParsing="false" onAction="#handleGoButton" text="Go" />
+            <Button layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#return" text="Return" />
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <children>
+            <SplitPane dividerPositions="0.4983221476510067" focusTraversable="true" prefHeight="236.0" prefWidth="598.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="latestBid" layoutX="67.0" layoutY="94.0" prefHeight="22.0" prefWidth="87.0" text="Latest bid:" />
+                    <Label fx:id="bid" layoutX="133.0" layoutY="97.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                    <Label fx:id="latestAsk" layoutX="77.0" layoutY="101.0" prefWidth="68.0" text="Latest ask:" />
+                    <Label fx:id="ask" layoutX="134.0" layoutY="101.0" />
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>

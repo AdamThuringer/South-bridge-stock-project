@@ -1,28 +1,34 @@
 package stockapp.modules.mainwindow;
 
+import java.net.URL;
+import java.util.Map.Entry;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.ListView;
 import stockapp.GraphicsController;
+import stockapp.Module;
 
-public class MainWindowController extends GraphicsController {
-    @FXML private Menu menu;
-    @FXML private Label label;
-    @FXML private SplitMenuButton moduleBrowser;
+public class MainWindowController extends GraphicsController {	
+	@FXML private ListView<Entry<String, Module>> moduleList;
 	
-	@FXML private void module1(ActionEvent event) {
-		checkLogic();
-		getLogic().showModule("com.southbridge.nativegraph");
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		moduleList.setCellFactory(new ModuleCallback());
 	}
-        
-    @FXML private void exitButton(ActionEvent event) throws Exception{
-		System.exit(0);
+	
+	@FXML private void handleOpenModule(ActionEvent event) {
+		checkLogic();
+		
+		String path = moduleList.getSelectionModel().getSelectedItem().getValue().getPath();
+		getLogic().showModule(path);
 	}
 
 	@Override
 	public void refresh() {
+		checkLogic();
 		
+		moduleList.getItems().clear();
+		moduleList.getItems().addAll(getLogic().getModuleList());
 	}
 }

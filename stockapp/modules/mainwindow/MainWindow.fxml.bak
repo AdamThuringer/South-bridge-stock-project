@@ -32,14 +32,14 @@
                         <Insets left="10.0" />
                       </VBox.margin>
                     </Label>
-                    <TextArea editable="false" minWidth="200.0" prefHeight="300.0" prefWidth="250.0" text="(2014-05-17) &#10;Lorem ipsum dolor sit amet, dui nunc, ut quis sit nec donec, placerat est. Quis vel convallis, quisque lobortis sit. Sodales fringilla, nulla imperdiet risus diam eu vitae, et egestas ac egestas. In adipiscing aliquam dapibus, turpis risus ante ligula suscipit, mauris volutpat eros tempus ac. Nunc lacus eu rhoncus lectus ante integer, sit eu ut convallis vel ipsum, ut ut, pellentesque molestie, blandit amet dictum in varius blandit donec." wrapText="true" />
+                    <TextArea editable="false" minWidth="200.0" prefHeight="300.0" prefWidth="200.0" text="(2014-05-17) &#10;Lorem ipsum dolor sit amet, dui nunc, ut quis sit nec donec, placerat est. Quis vel convallis, quisque lobortis sit. Sodales fringilla, nulla imperdiet risus diam eu vitae, et egestas ac egestas. In adipiscing aliquam dapibus, turpis risus ante ligula suscipit, mauris volutpat eros tempus ac. Nunc lacus eu rhoncus lectus ante integer, sit eu ut convallis vel ipsum, ut ut, pellentesque molestie, blandit amet dictum in varius blandit donec." wrapText="true" />
                   </children>
                 </VBox>
                 <Separator orientation="VERTICAL" prefHeight="200.0" />
                 <VBox minHeight="300.0" prefHeight="300.0" spacing="5.0">
                   <children>
                     <Label font="$x1" text="Modules" />
-                    <ListView fx:id="moduleList" prefHeight="300.0" prefWidth="250.0" />
+                    <ListView fx:id="moduleList" prefHeight="300.0" prefWidth="200.0" />
                     <HBox alignment="TOP_CENTER">
                       <children>
                         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleOpenModule" text="Open" />

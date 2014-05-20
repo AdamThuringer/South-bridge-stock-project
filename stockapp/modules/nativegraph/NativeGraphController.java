@@ -1,6 +1,7 @@
 package stockapp.modules.nativegraph;
 
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,6 +47,7 @@ public class NativeGraphController extends GraphicsController {
 				}
 			}
 		});
+		stockList.setCellFactory(new StockCallback());
 	}
 	
 	@FXML private void returnToMain(ActionEvent event) {
@@ -65,7 +67,6 @@ public class NativeGraphController extends GraphicsController {
 		stockList.getItems().clear();
 		for(Entry<String, String> entry : ind.getEntrySet()) {
 			stockList.getItems().add(entry);
-			
 		}
 	}
 	
@@ -74,6 +75,11 @@ public class NativeGraphController extends GraphicsController {
 		checkLogic();
 		clear();
 		
+		updateIndiceList();
+		updateChart();
+	}
+	
+	private void updateIndiceList() {
 		Set<Entry<String, Index>> indices = getLogic().getIndices();
 		for(Entry<String, Index> entry : indices) {
 			MenuItem item = new MenuItem();
@@ -87,8 +93,6 @@ public class NativeGraphController extends GraphicsController {
 			});
 			indexSelect.getItems().add(item);
 		}
-		
-		updateChart();
 	}
 	
 	private void updateChart() {
@@ -96,7 +100,11 @@ public class NativeGraphController extends GraphicsController {
 			return;
 		}
 		Equity eq = getLogic().getEquity(symbol, "2014-01-01", "2014-05-15");
-		stockName.setText(eq.getVariable("Name"));
+		String label = "";
+		try {
+			label = URLDecoder.decode(eq.getVariable("Name"), "UTF-8");
+		} catch(Exception ex) {}
+		stockName.setText(label);
 		stockPrice.setText(eq.getVariable("BidRealtime"));
 		
 		XYChart.Series<Number, Number> series = new XYChart.Series();
@@ -110,7 +118,7 @@ public class NativeGraphController extends GraphicsController {
 			Entry<String, EquityDay> entry = it.next();
 			series.getData().add(new XYChart.Data(entry.getKey(), entry.getValue().getClose()));
 		}
-
+		
         chart.getData().add(series);
 	}
 	
