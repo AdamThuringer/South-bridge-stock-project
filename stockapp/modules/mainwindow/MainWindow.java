@@ -42,4 +42,9 @@ public class MainWindow implements Module {
 		controller.refresh();
 	}
 
+	@Override
+	public boolean isInternal() {
+		return true;
+	}
+
 }

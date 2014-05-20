@@ -1,4 +1,4 @@
-package stockapp.modules.nativegraph;
+package stockapp.modules.bidask;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,20 +6,21 @@ import stockapp.GraphicsController;
 import stockapp.Logic;
 import stockapp.Module;
 
-public class NativeGraph implements Module{
-	private Parent root;
+
+public class BidAsk implements Module {
+    private Parent root;
 	private GraphicsController controller;
 	
-	public NativeGraph(Logic logic) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("NativeGraph.fxml"));
+	public BidAsk(Logic logic) throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("BidAsk.fxml"));
 		root = (Parent) loader.load();
 		controller = (GraphicsController) loader.getController();
 		controller.setLogicHandler(logic);
 	}
-
-	@Override
+        
+    @Override
 	public String getName() {
-		return "Regular Graph";
+		return "Bid/Ask Comparator";
 	}
 
 	@Override
@@ -29,7 +30,7 @@ public class NativeGraph implements Module{
 
 	@Override
 	public String getPath() {
-		return "com.southbridge.nativegraph";
+		return "com.southbridge.bidask";
 	}
 
 	@Override
@@ -46,5 +47,4 @@ public class NativeGraph implements Module{
 	public boolean isInternal() {
 		return false;
 	}
-
 }
