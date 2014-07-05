@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="stockapp.modules.nativegraph.NativeGraphController">
+  <bottom>
+    <HBox spacing="20.0">
+      <children>
+        <Button mnemonicParsing="false" onAction="#handleOptionsButton" text="Options" />
+        <Button mnemonicParsing="false" onAction="#requestOMX" text="OMXS30" />
+        <Button mnemonicParsing="false" onAction="#requestNASDAQ" text="NASDAQ" />
+        <Button mnemonicParsing="false" onAction="#requestYahoo" text="Yahoo" />
+      </children>
+      <BorderPane.margin>
+        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+      </BorderPane.margin>
+    </HBox>
+  </bottom>
+  <center>
+    <LineChart id="LineChart">
+      <xAxis>
+        <CategoryAxis side="BOTTOM">
+          <categories>
+            <FXCollections fx:factory="observableArrayList" />
+          </categories>
+        </CategoryAxis>
+      </xAxis>
+      <yAxis>
+        <NumberAxis side="LEFT" />
+      </yAxis>
+    </LineChart>
+  </center>
+</BorderPane>
